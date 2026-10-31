@@ -11,7 +11,9 @@ public class Contestant extends Person {
 	// Start simple to get your program running, then add attributes and methods as you need them
 	
 	// Step 1 Add at least one constructor so the driver will compile and run
-	
+		public Contestant(String name, int age){
+			super(name, age);
+		}
 	
 	// Step 5 Add attributes and methods to assist with recording game statistics
 }
