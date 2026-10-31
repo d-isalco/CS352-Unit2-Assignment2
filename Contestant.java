@@ -2,8 +2,8 @@
  * This class extends Person while adding attributes and methods
  * related to recording performance in the specified contest. 
  *     
- * Author: Name and Student ID
- * Last updated: 
+ * Author: DAVID MONTENEGRO, PARK ID; 559238
+ * Last updated: 31 OCT 2026 - HAPPY HALLOWEEN
  */
 public class Contestant extends Person {
 	// A Contestant IS-A Person
