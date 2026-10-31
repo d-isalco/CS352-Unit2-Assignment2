@@ -11,7 +11,7 @@ public class ContestDriver {
 		//This creates a single Contestant and prints its attributes, just to show it can be done
 		
 		// Step 2
-		// Create multiple Contestants and add them to an ArrayList
+		// Create multiple Contestants and add them to an LinkedList.
 		// Do something simple to get started, but remember, you will need
 		// to generate up to 1,000,000 Contestants	
         int numberOfContestants = 10;
@@ -22,10 +22,10 @@ public class ContestDriver {
             "Contestants", "Rounds", "Time (seconds)"
         );
 
-		// Run a separate test for each round count.
+		// it runs a separate test for each round count.
 		for (int numberOfRounds : roundCounts) {
 
-            // Start each test with new contestants and fresh statistics.
+            // code starts each test with new contestants and fresh statistics.
 			// Create a LinkedList to hold the Contestants
             LinkedList<Contestant> contestantList = new LinkedList<>();
 
@@ -38,7 +38,7 @@ public class ContestDriver {
 		// Steps 3 and 4
 		// Play a round
 		// For each Contestant, flip a coin, then move the Contestant to
-		// one end of the ArrayList or the other.
+		// one end of the LinkedList or the other.
 		// Steps 5 - 7
 		// Repeat Steps 3 and 4 many times to gather data.
 		// You will need to modify the Contestant class so each Contestant
@@ -48,16 +48,16 @@ public class ContestDriver {
 		// A fixed seed makes the coin flips repeatable.
 		// This is useful for testing and debugging, but you may want to
 		// remove the seed later to see how the program performs with random data.
-        Random random = new Random(12345);
-		//Random random = new Random(0);
+        //Random random = new Random(12345);
+		Random random = new Random(0);
 
 			// Start the timer for this test.
             long startTime = System.nanoTime();
 		
-			// Actually perform the requested number of rounds.
+			// perform the requested number of rounds.
             for (int round = 0; round < numberOfRounds; round++) {
 
-                // Preserve the order at the beginning of this round.
+                // hold the order at the beginning of this round.
                 LinkedList<Contestant> startingOrder =
                     new LinkedList<>(contestantList);
 
