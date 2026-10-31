@@ -15,21 +15,19 @@ public class ContestDriver {
 		// Create multiple Contestants and add them to an ArrayList
 		// Do something simple to get started, but remember, you will need
 		// to generate up to 1,000,000 Contestants	
-		ArrayList<Contestant> ac = new ArrayList<>();
-			ac.add (new Contestant("David", 43));
-			ac.add (new Contestant("Jose", 22));
-			ac.add (new Contestant("Robert", 33));
-			ac.add (new Contestant("Cherry", 44));
-			ac.add (new Contestant("Tim", 55));
-			ac.add (new Contestant("Sarah", 27));
-			ac.add (new Contestant("Tequila", 27));
-			ac.add (new Contestant("Leon", 39));
-			ac.add (new Contestant("Charles", 49));
-			ac.add (new Contestant("Allen", 51));
-		
-		for (int i = 0; i < ac.size(); i++) {
-			System.out.println(ac.get(i) + " is at index: " + i);
-		}
+		int numberOfContestants = 10;
+
+		ArrayList<Contestant> contestants = new ArrayList<>();
+			// Create Contestants and add them to the ArrayList
+			for (int i=0; i < numberOfContestants; i++){
+				Contestant contestant = new Contestant("Player " + (i+1), 48);
+				contestants.add(contestant);
+			}
+			
+			// Print out the Contestants to verify they were created and added to the ArrayList
+			for (Contestant contestant : contestants){
+				System.out.println(contestant);
+			}	
 
 		// Steps 3 and 4
 		// Play a round
