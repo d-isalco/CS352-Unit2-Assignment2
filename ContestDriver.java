@@ -14,7 +14,7 @@ public class ContestDriver {
 		// Create multiple Contestants and add them to an LinkedList.
 		// Do something simple to get started, but remember, you will need
 		// to generate up to 1,000,000 Contestants	
-        int numberOfContestants = 10;
+        int numberOfContestants = 1000;
         int[] roundCounts = {10, 100, 1000, 10000};
 
 		System.out.printf(
