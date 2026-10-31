@@ -26,6 +26,7 @@ public class ContestDriver {
 		for (int numberOfRounds : roundCounts) {
 
             // Start each test with new contestants and fresh statistics.
+			// Create a LinkedList to hold the Contestants
             LinkedList<Contestant> contestantList = new LinkedList<>();
 
             for (int i = 0; i < numberOfContestants; i++) {
@@ -45,8 +46,12 @@ public class ContestDriver {
 		// position at the end of each round.
 
 		// A fixed seed makes the coin flips repeatable.
-            Random random = new Random(12345);
+		// This is useful for testing and debugging, but you may want to
+		// remove the seed later to see how the program performs with random data.
+        Random random = new Random(12345);
+		//Random random = new Random(0);
 
+			// Start the timer for this test.
             long startTime = System.nanoTime();
 		
 			// Actually perform the requested number of rounds.
@@ -56,6 +61,8 @@ public class ContestDriver {
                 LinkedList<Contestant> startingOrder =
                     new LinkedList<>(contestantList);
 
+				// For loop let each contestant flip a coin and move the contestant to the front or back of the list.
+				// this simulates a game where the Contestants are moving around in the list.
                 for (int i = 0; i < startingOrder.size(); i++) {
                     Contestant currentContestant =
                         startingOrder.get(i);
@@ -63,25 +70,32 @@ public class ContestDriver {
                     boolean correctCoinFlip = random.nextBoolean();
 
                     contestantList.remove(currentContestant);
-
+					// Move the Contestant to the front or back of the list based on the coin flip.
                     if (correctCoinFlip) {
-                        contestantList.add(0, currentContestant);
+						// it moves the contestant to the front of the list.
+                        contestantList.add(0, currentContestant);					
                     } else {
+						// it moves the contestant to the back of the list.
                         contestantList.add(currentContestant);
                     }
                 }
 
-                // Record each contestant's position after this round.
+                // it record each contestant's position after the round we are on.
                 for (int i = 0; i < contestantList.size(); i++) {
+					// Record the position of the Contestant at index i in the list.
                     contestantList.get(i).recordPosition(i);
                 }
             }
 
+			// it calculate the elapsed time for this test.
             long endTime = System.nanoTime();
 
+			// it calculate the elapsed time in seconds.
             double elapsedTimeInSeconds =
                 (endTime - startTime) / 1_000_000_000.0;
 
+			// Print the results for this test.
+			// The %12d and %16.6f helps to format the align the output in columns.
             System.out.printf(
                 "%12d %12d %16.6f%n",
                 numberOfContestants,
